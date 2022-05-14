@@ -7,5 +7,7 @@ public class Hello {
 //        new Person().hello();   //hello()是Person()物件裡的方法
         Person p = new Person();    //為了重複使用，去產生一個 p 物件來儲存 Person() 物件。
         p.hello();
+//--------------------- tutorial_2_4 --------------------------
+        int a = 19;
     }
 }
