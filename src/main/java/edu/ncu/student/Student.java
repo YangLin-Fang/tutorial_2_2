@@ -18,4 +18,13 @@ public class Student {
     public void print(){
         System.out.println(name + "\tenglish:" + english + "\tmath:" + math + "\taverage:" + ((english+math)/2));
     }
+    public float highest(){
+//        float max = (english>math)? english:math;
+        /*if(english>math){
+            max=english;
+        }else {
+            max=math;
+        }*/
+        return (english > math) ? english:math;
+    }
 }
