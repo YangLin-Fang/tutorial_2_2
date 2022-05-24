@@ -6,21 +6,26 @@ public class Student {
     String name;
     float english;
     float math;
+    static int pass = 60;
+
     /*Construe*/
     /*SHORTCUT : [alt + ins]*/
-    public Student(){}
+//    public Student() {
+//    }
+
     public Student(String name, float english, float math) {
         this.name = name;
         this.english = english;
         this.math = math;
     }
+
     /*Method*/
-    public void print(){
+    public void print() {
         float average = getAverage();
         System.out.println(name + "\tenglish:" + english +
                 "\tmath:" + math +
                 "\taverage:" + getAverage() +
-                "\tPass/Fail:" + ((average >= 60) ? "PASS":"FAIL"));
+                "\tPass/Fail:" + ((average >= pass) ? "PASS" : "FAIL"));
         /* ==" ==" =="*/
         //  90 to 100   -> grading is A
         //  80 to 89    -> grading is B
@@ -28,7 +33,7 @@ public class Student {
         //  60 to 69    -> grading is D
         //  59 down     -> grading is F
         char grading = 'F';
-        switch ((int) (average/10)){
+        switch ((int) (average / 10)) {
             case 10:
             case 9:
                 grading = 'A';
@@ -103,17 +108,18 @@ public class Student {
             System.out.println("\tFAIL");
         }*/
     }
-    public float highest(){
+
+    public float highest() {
 //        float max = (english>math)? english:math;
         /*if(english>math){
             max=english;
         }else {
             max=math;
         }*/
-        return ((english > math) ? english:math);
+        return ((english > math) ? english : math);
     }
 
-    public float getAverage(){
-        return (english+math)/2;
+    public float getAverage() {
+        return (english + math) / 2;
     }
 }
