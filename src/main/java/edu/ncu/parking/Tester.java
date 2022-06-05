@@ -2,11 +2,30 @@ package edu.ncu.parking;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Tester {
     public static void main(String[] args) {
+        //extracted();
+        Instant instant = Instant.now();
+        System.out.println(instant);
+        //Local
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        System.out.println(formatter.format(now));
+        System.out.println(now.plus(Duration.ofHours(3)));
+
+        LocalDateTime other = LocalDateTime.of(2018,11,23,8,0,59);
+        System.out.println(other);
+    }
+
+    private static void extracted() {
         Date date = new Date();
         System.out.println(date);
         //  Date 內部使用 long 長整數 1970/1/1 00:00:00 至今的毫秒數
