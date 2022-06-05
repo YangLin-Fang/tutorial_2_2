@@ -1,17 +1,36 @@
 package edu.ncu.parking;
 
+import java.sql.SQLOutput;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Tester {
     public static void main(String[] args) {
+        LocalDateTime enter =
+                LocalDateTime.of(2018,12,25,
+                        8,0,0);
+        LocalDateTime leave =
+                LocalDateTime.of(2018,12,25,
+                        10,0,0);
+        Car car = new Car("BGZ-0159",enter);
+        car.setLeave(leave);
+        System.out.println(car.getDuration());
+        long hours = (long)Math.ceil(car.getDuration()/60.0);
+        System.out.println(hours);
+        System.out.println(hours*30);
         //extracted();
+        //extracted1();
+
+    }
+
+    private static void extracted1() {
         Instant instant = Instant.now();
         System.out.println(instant);
         //Local
